@@ -1,0 +1,47 @@
+{
+  "name": "snowpack-plugin-wasm-pack",
+  "description": "Snowpack plugin for rust using wasm-pack 🦀",
+  "version": "1.0.0",
+  "main": "plugin.js",
+  "types": "plugin.d.ts",
+  "files": [
+    "plugin.js",
+    "plugin.d.ts"
+  ],
+  "license": "Unlicense",
+  "keywords": [
+    "snowpack",
+    "snowpack-plugin",
+    "wasm",
+    "rust",
+    "wasm-pack",
+    "wasm-bindgen"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://git.sr.ht/~george_/snowpack-plugin-wasm-pack"
+  },
+  "author": "George Payne <georgepayne@hotmail.com>",
+  "bugs": {
+    "url": "https://todo.sr.ht/~george_/snowpack-plugin-wasm-pack"
+  },
+  "homepage": "https://git.sr.ht/~george_/snowpack-plugin-wasm-pack",
+  "scripts": {
+    "build": "tsc"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "dependencies": {
+    "toml": "^3.0.0",
+    "execa": "^5.0.0",
+    "npm-run-path": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.14",
+    "prettier": "^2.2.1",
+    "snowpack": "^2.18.5",
+    "typescript": "^4.1.3"
+  }
+}
