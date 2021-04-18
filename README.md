@@ -1,5 +1,7 @@
 # snowpack-plugin-wasm-pack
 
+A forked version of [snowpack-plugin-wasm-pack](https://git.sr.ht/~george_/snowpack-plugin-wasm-pack), allows the `target` option to be set.
+
 Snowpack plugin for rust using [`wasm-pack`](https://rustwasm.github.io/wasm-pack/book/) 🦀
 
 ## Installation
@@ -55,6 +57,7 @@ module.exports = {
 | `outDir`       | Directory for the compiled assets.                                   |             `string`              |          |  `"pkg"`  |
 | `outName`      | Sets the prefix for output file names.                               |             `string`              |          | `"index"` |
 | `logLevel`     | Sets the log level of `wasm-pack`.                                   | `"info"` or `"warn"` or `"error"` |          | `"warn"`  |
+| `target`       | Sets the target of `wasm-pack`.                                      |             `string`              |          |  `"web"`  |
 | `scope`        | Scope of your package name, eg: `@test/my-great-wasm`.               |             `string`              |          |     -     |
 | `extraArgs`    | Any extra args you want to pass to wasm-pack. eg: `--no-typescript`. |          `Array<string>`          |          |     -     |
 | `wasmPackPath` | Path to a custom install of `wasm-pack`.                             |             `string`              |          |     -     |

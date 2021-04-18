@@ -13,6 +13,7 @@ export interface SnowPackPluginWASMPackOptions {
   outName?: string;
   logLevel?: 'info' | 'warn' | 'error';
   scope?: string;
+  target?: string;
   extraArgs?: string[];
   wasmPackPath?: string;
 }
@@ -24,6 +25,7 @@ const snowpackPluginWASMPack: SnowpackPluginFactory<SnowPackPluginWASMPackOption
     outDir = 'pkg',
     outName = 'index',
     logLevel = 'warn',
+    target = 'web',
     extraArgs = [],
     scope,
     wasmPackPath = 'wasm-pack',
@@ -58,7 +60,7 @@ See https://rustwasm.github.io/wasm-pack/book/commands/new.html for creating a n
         logLevel,
         'build',
         '--target',
-        'web',
+        target,
         '--out-dir',
         outDir,
         '--out-name',

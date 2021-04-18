@@ -1,5 +1,5 @@
 {
-  "name": "snowpack-plugin-wasm-pack",
+  "name": "@emilycurry/snowpack-plugin-wasm-pack",
   "description": "Snowpack plugin for rust using wasm-pack 🦀",
   "version": "1.0.0",
   "main": "plugin.js",
@@ -19,13 +19,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://git.sr.ht/~george_/snowpack-plugin-wasm-pack"
+    "url": "git@github.com:emily-curry/snowpack-plugin-wasm-pack.git"
   },
-  "author": "George Payne <georgepayne@hotmail.com>",
+  "author": "Emily Curry <emily@curry.sh>",
   "bugs": {
-    "url": "https://todo.sr.ht/~george_/snowpack-plugin-wasm-pack"
+    "url": "https://github.com/emily-curry/snowpack-plugin-wasm-pack/issues"
   },
-  "homepage": "https://git.sr.ht/~george_/snowpack-plugin-wasm-pack",
+  "homepage": "https://github.com/emily-curry/snowpack-plugin-wasm-pack",
   "scripts": {
     "build": "tsc"
   },
