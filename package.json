@@ -1,5 +1,5 @@
 {
-  "name": "@emilycurry/snowpack-plugin-wasm-pack",
+  "name": "@emily-curry/snowpack-plugin-wasm-pack",
   "description": "Snowpack plugin for rust using wasm-pack 🦀",
   "version": "1.0.0",
   "main": "plugin.js",
