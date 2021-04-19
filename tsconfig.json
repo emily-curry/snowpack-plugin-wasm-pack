@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "lib": ["es2020", "DOM"],
+    "lib": ["esnext", "DOM"],
     "module": "commonjs",
     "target": "es2019",
-    "declaration": true
+    "declaration": true,
+    "allowSyntheticDefaultImports": true
   }
 }

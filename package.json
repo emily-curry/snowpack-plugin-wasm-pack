@@ -1,7 +1,7 @@
 {
   "name": "@emily-curry/snowpack-plugin-wasm-pack",
   "description": "Snowpack plugin for rust using wasm-pack 🦀",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "plugin.js",
   "types": "plugin.d.ts",
   "files": [
@@ -27,21 +27,23 @@
   },
   "homepage": "https://github.com/emily-curry/snowpack-plugin-wasm-pack",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "build:watch": "tsc --watch"
   },
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
   },
   "dependencies": {
-    "toml": "^3.0.0",
     "execa": "^5.0.0",
-    "npm-run-path": "^4.0.1"
+    "npm-run-path": "^4.0.1",
+    "toml": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.14",
+    "@types/ws": "^7.4.1",
     "prettier": "^2.2.1",
-    "snowpack": "^2.18.5",
+    "snowpack": "^3.3.3",
     "typescript": "^4.1.3"
   }
 }
