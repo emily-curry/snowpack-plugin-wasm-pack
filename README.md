@@ -7,7 +7,7 @@ A forked version of [snowpack-plugin-wasm-pack](https://git.sr.ht/~george_/snowp
 ## Installation
 
 ```bash
-yarn add --dev snowpack-plugin-wasm-pack
+yarn add --dev @emily-curry/snowpack-plugin-wasm-pack
 ```
 
 The plugin also depends on [`wasm-pack`](https://github.com/rustwasm/wasm-pack) and [`cargo-watch`](https://github.com/passcod/cargo-watch)
@@ -29,7 +29,7 @@ cargo install cargo-watch
 Create a new RustWasm project within your project:
 
 ```bash
-wasm-pack new <name>
+wasm-pack new <my-wasm-project-name>
 ```
 
 Add the plugin to your Snowpack config:
@@ -38,11 +38,14 @@ Add the plugin to your Snowpack config:
 
 ```js
 module.exports = {
+  mount: {
+    src: '/',
+  },
   plugins: [
     [
-      'snowpack-plugin-wasm-pack',
+      '@emily-curry/snowpack-plugin-wasm-pack',
       {
-        projectPath: './path/to/project',
+        projectPath: './my-wasm-project-name',
       },
     ],
   ],
@@ -82,13 +85,30 @@ pub fn add(a: i32, b: i32) -> i32 {
 **src/index.ts**
 
 ```ts
-import init, { add } from 'project-name';
+import init, { add } from 'my-wasm-project-name';
 
 const maths = async () => {
   await init();
 
   console.log('Addition in rust:', add(1, 2));
 };
+
+maths(); // should log 3 to console
+```
+
+**src/index.html**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <h1>🦀</h1>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
 ```
 
 ## Usage with typescript
@@ -100,7 +120,7 @@ You need to manually add the alias to your tsconfig under `compilerOptions` -> `
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "project-name": ["./path/to/project/pkg"]
+      "my-wasm-project-name": ["./my-wasm-project-name/pkg"]
     }
   }
 }
@@ -114,15 +134,16 @@ Add the plugin multiple times for multiple projects:
 
 ```js
 module.exports = {
+  // ... rest omitted
   plugins: [
     [
-      'snowpack-plugin-wasm-pack',
+      '@emily-curry/snowpack-plugin-wasm-pack',
       {
-        projectPath: './path/to/project',
+        projectPath: './my-wasm-project-name',
       },
     ],
     [
-      'snowpack-plugin-wasm-pack',
+      '@emily-curry/snowpack-plugin-wasm-pack',
       {
         projectPath: './path/to/another/project',
       },
@@ -133,13 +154,17 @@ module.exports = {
 
 ## Changes
 
-### 1.1.0
+### 1.0.0
 
 - Added `watch` option. In modes matching the watch option, the wasm-pack build process runs alongside the snowpack build process. In non-watch modes, the wasm-pack build process executes syncronously before the main snowpack build process, ensuring the files are built in time for subsequent steps.
 
-### 1.0.1
+### 1.1.0
 
 - Added `target` option, allowing the `wasm-pack --target` arg to be set.
+
+### 1.1.2
+
+- README improvements.
 
 ## Useful links
 
