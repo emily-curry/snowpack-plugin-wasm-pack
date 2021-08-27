@@ -96,6 +96,13 @@ const snowpackPluginWASMPack: SnowpackPluginFactory<SnowPackPluginWASMPackOption
         wasmPackArgs,
         wasmPackCommandOptions,
       );
+      const { stdout, stderr } = wasmPackResult;
+      if (stderr) {
+        logger.error(stderr, { name: pluginName });
+      }
+      if (stdout) {
+        logger.info(stdout, { name: pluginName });
+      }
       exitCode = wasmPackResult.exitCode;
     } catch (e) {
       exitCode = e.exitCode;
