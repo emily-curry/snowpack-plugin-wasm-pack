@@ -166,6 +166,10 @@ module.exports = {
 
 - README improvements.
 
+### 1.1.3
+
+- `snowpack build` now outputs same compilation logs as `snowpack dev`.
+
 ## Useful links
 
 [`wasm-pack`](https://rustwasm.github.io/wasm-pack/book/introduction.html)
