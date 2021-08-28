@@ -170,6 +170,10 @@ module.exports = {
 
 - `snowpack build` now outputs same compilation logs as `snowpack dev`.
 
+### 1.1.4
+
+- `snowpack build` now outputs args used to invoke `wasm-pack`.
+
 ## Useful links
 
 [`wasm-pack`](https://rustwasm.github.io/wasm-pack/book/introduction.html)

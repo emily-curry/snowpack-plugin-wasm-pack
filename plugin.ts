@@ -90,7 +90,9 @@ const snowpackPluginWASMPack: SnowpackPluginFactory<SnowPackPluginWASMPackOption
   let exitCode: number | undefined;
   if (!shouldWatch) {
     try {
-      logger.info(`Executing build...`, { name: pluginName });
+      logger.info(`[Running '${wasmPackPath} ${wasmPackArgs.join(' ')}']`, {
+        name: pluginName,
+      });
       const wasmPackResult = execa.sync(
         wasmPackPath,
         wasmPackArgs,
@@ -106,6 +108,12 @@ const snowpackPluginWASMPack: SnowpackPluginFactory<SnowPackPluginWASMPackOption
       exitCode = wasmPackResult.exitCode;
     } catch (e) {
       exitCode = e.exitCode;
+    }
+    const exitMsg = `[Finished running. Exit status: ${exitCode}]`;
+    if (exitCode === 0) {
+      logger.info(exitMsg, { name: pluginName });
+    } else {
+      logger.error(exitMsg, { name: pluginName });
     }
   }
 
